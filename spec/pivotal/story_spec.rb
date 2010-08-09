@@ -20,7 +20,7 @@ describe Pivotal::Story do
      :description, :name, :requested_by, :owned_by,
      :created_at, :accepted_at, :labels].map(&:to_s).each do |method|
     it "should have an accessor method for #{method}" do
-      @story.methods.should include(method)
+      @story.methods.map(&:to_s).should include(method)
     end
     
     it "should include #{method} in the list of valid attributes" do
